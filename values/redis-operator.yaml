@@ -1,0 +1,3 @@
+# https://artifacthub.io/packages/helm/ot-container-kit/redis-operator?modal=values
+redisOperator.watchNamespace: "redis-instance"
+

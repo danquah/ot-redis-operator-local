@@ -1,0 +1,26 @@
+# https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack?modal=values
+crds:
+  enabled: true
+kubeStateMetrics:
+  enabled: true
+nodeExporter:
+  enabled: true
+grafana:
+  enabled: true
+  adminPassword: admin
+  # TODO - dashboard
+alertmanager:
+  enabled: false
+prometheus:
+  enabled: true
+  prometheusSpec:
+    serviceMonitorSelector: {}
+  # We want the operator to search for Service Monitors in all namespaces
+  # To ensure that happens we nill the selector, and then tell the chart
+  # not to treat that as a signal to use the name of the release as the value.
+    serviceMonitorSelectorNilUsesHelmValues: false
+prometheusOperator:
+  enabled: true
+
+
+

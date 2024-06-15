@@ -1,0 +1,10 @@
+# https://artifacthub.io/packages/helm/ot-container-kit/redis-cluster?modal=values
+redisCluster:
+  clusterSize: 3
+redisExporter:
+  enabled: true
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
+  namespace: redis-instance
